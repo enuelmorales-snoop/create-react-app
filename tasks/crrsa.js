@@ -12,8 +12,16 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = path.join(__dirname, '..');
-const rootSrcActionsDir = rootDir + '/src/actions';
+const args = process.argv.slice(2);
+const projectName = args.join(' ');
+const srcDir = `${rootDir}/${projectName}`;
 
-if (!fs.existsSync(rootSrcActionsDir)) {
-  fs.mkdirSync(rootSrcActionsDir);
+const actionsDir = `${srcDir}/src/actions`;
+if (!fs.existsSync(actionsDir)) {
+  fs.mkdirSync(actionsDir);
+}
+
+const assetsDir = `${srcDir}/src/assets`;
+if (!fs.existsSync(assetsDir)) {
+  fs.mkdirSync(assetsDir);
 }
