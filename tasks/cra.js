@@ -116,6 +116,7 @@ const craScriptPath = path.join(
   'create-react-redux-snoop-app',
   'index.js'
 );
+console.log(craScriptPath);
 cp.execSync(
   `node ${craScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`,
   {
@@ -123,6 +124,11 @@ cp.execSync(
     stdio: 'inherit',
   }
 );
+
+// Now run the CRRSA command
+const crrsaScriptPath = 'node crrsa.js';
+console.log(crrsaScriptPath);
+cp.execSync(`node ${crrsaScriptPath}`);
 
 // Cleanup
 handleExit();
