@@ -126,9 +126,8 @@ cp.execSync(
 );
 
 // Now run the CRRSA command
-const crrsaScriptPath = 'node crrsa.js';
-console.log(crrsaScriptPath);
-cp.execSync(`node ${crrsaScriptPath}`);
+console.log('node crrsa.js');
+cp.execSync(`node crrsa.js`);
 
 // Cleanup
 handleExit();
