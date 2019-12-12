@@ -122,11 +122,10 @@ cp.execSync(
 );
 
 // Now run the CRRSA command
-console.log('node crrsa.js');
-cp.execSync(`node crrsa.js`, {
-  cwd: rootDir,
-  stdio: 'inherit',
-});
+const tasksDir = path.join(rootDir, 'tasks');
+const crrsaScriptPath = path.join(tasksDir, 'crrsa.js');
+console.log(crrsaScriptPath);
+cp.execSync(`node ${crrsaScriptPath} ${args.join(' ')}`);
 
 // Cleanup
 handleExit();
