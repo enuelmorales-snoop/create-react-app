@@ -127,7 +127,10 @@ cp.execSync(
 
 // Now run the CRRSA command
 console.log('node crrsa.js');
-cp.execSync(`node crrsa.js`);
+cp.execSync(`node crrsa.js`, {
+  cwd: rootDir,
+  stdio: 'inherit',
+});
 
 // Cleanup
 handleExit();
